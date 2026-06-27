@@ -1,0 +1,22 @@
+:root{
+    --bg:#07111f;
+    --gold:#f6c453;
+    --cream:#f8f4e8;
+    --gray:#b6becd;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:white;
+    overflow-x:hidden;
+}
+.page-transition{
+    animation:pageFade 3s ease;
+}

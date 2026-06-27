@@ -1,0 +1,799 @@
+
+/* ===========================
+   FUNNY MOMENTS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#07111f;
+    color:#fff;
+    overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+    position:relative;
+}
+
+/* ===========================
+   VIGNETTE EFFECT
+=========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    transparent 40%,
+    rgba(0,0,0,.55));
+
+    pointer-events:none;
+    z-index:1;
+}
+
+/* ===========================
+   GOLD DOTS BACKGROUND
+=========================== */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(#d4af37 1px, transparent 1px);
+
+    background-size:60px 60px;
+
+    opacity:.25;
+
+    z-index:-2;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.funny-section{
+
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 40px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.funny-header{
+
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.gold-title{
+
+    display:block;
+
+    font-size:5rem;
+    font-weight:900;
+
+    letter-spacing:6px;
+
+    background:linear-gradient(
+    90deg,
+    #d4af37,
+    #ffd700,
+    #fff4b0,
+    #d4af37);
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:shimmer 5s linear infinite;
+
+    text-shadow:
+    0 0 15px rgba(212,175,55,.6),
+    0 0 40px rgba(212,175,55,.4);
+}
+
+.script-title{
+
+    display:block;
+
+    font-size:4rem;
+    font-family:cursive;
+
+    color:#fff4c7;
+
+    margin-top:-10px;
+
+    text-shadow:
+    0 0 12px rgba(255,215,0,.5);
+}
+
+.funny-header p{
+
+    margin-top:15px;
+
+    color:#d9d9d9;
+
+    font-size:1rem;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.funny-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:35px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.funny-card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:
+    blur(10px);
+
+    border:2px solid
+    rgba(212,175,55,.7);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.15);
+
+    position:relative;
+}
+
+.funny-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.05);
+
+    box-shadow:
+    0 0 30px rgba(255,215,0,.4),
+    0 0 60px rgba(255,215,0,.2);
+}
+
+.funny-card img{
+
+    width:100%;
+    height:420px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.caption{
+
+    padding:18px;
+
+    text-align:center;
+
+    color:#fff4c7;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    background:
+    rgba(0,0,0,.35);
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.next-wrapper{
+
+    text-align:center;
+    margin-top:70px;
+}
+
+.next-btn{
+
+    display:inline-block;
+
+    padding:16px 40px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    color:#07111f;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    #d4af37,
+    #ffd700);
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 20px rgba(255,215,0,.4);
+}
+
+.next-btn:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 0 35px rgba(255,215,0,.7);
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+.star{
+
+    position:fixed;
+
+    color:#ffd700;
+
+    font-size:22px;
+
+    animation:
+    twinkle 3s infinite;
+}
+
+.s1{
+    top:8%;
+    left:10%;
+}
+
+.s2{
+    top:18%;
+    right:12%;
+}
+
+.s3{
+    bottom:20%;
+    left:15%;
+}
+
+.s4{
+    bottom:10%;
+    right:10%;
+}
+/* Extra Stars */
+
+.s5{
+    top:12%;
+    left:30%;
+    animation-delay:1s;
+}
+
+.s6{
+    top:25%;
+    left:75%;
+    animation-delay:2s;
+}
+
+.s7{
+    top:45%;
+    left:8%;
+    animation-delay:3s;
+}
+
+.s8{
+    top:55%;
+    right:12%;
+    animation-delay:1.5s;
+}
+
+.s9{
+    bottom:30%;
+    left:25%;
+    animation-delay:2.5s;
+}
+
+.s10{
+    bottom:15%;
+    right:25%;
+    animation-delay:4s;
+}
+
+/* Extra Hearts */
+
+.h4{
+    top:40%;
+    left:12%;
+}
+
+.h5{
+    top:65%;
+    right:8%;
+}
+
+.h6{
+    bottom:25%;
+    left:30%;
+}
+
+.h7{
+    top:18%;
+    left:55%;
+}
+
+.h8{
+    bottom:12%;
+    right:35%;
+}
+
+/* ===========================
+   HEARTS
+=========================== */
+
+.heart{
+
+    position:fixed;
+
+    color:#d4af37;
+
+    font-size:28px;
+
+    opacity:.4;
+
+    animation:
+    heartPulse 4s infinite;
+}
+
+.h1{
+    top:30%;
+    left:5%;
+}
+
+.h2{
+    top:20%;
+    right:6%;
+}
+
+.h3{
+    bottom:20%;
+    right:8%;
+}
+
+/* ===========================
+   CROWNS
+=========================== */
+
+.crown{
+
+    position:fixed;
+
+    font-size:28px;
+
+    opacity:.7;
+}
+
+.c1{
+    top:12%;
+    right:20%;
+}
+
+.c2{
+    bottom:12%;
+    left:18%;
+}
+
+/* ===========================
+   FLOATING PARTICLES
+=========================== */
+
+.particles{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,215,0,.5) 1px,
+    transparent 1px);
+
+    background-size:
+    120px 120px;
+
+    opacity:.15;
+
+    animation:
+    floatParticles 20s linear infinite;
+}
+
+/* ===========================
+   REVEAL
+=========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(50px);
+
+    transition:
+    .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+.spark{
+
+    position:fixed;
+
+    width:3px;
+    height:3px;
+
+    background:#ffd700;
+
+    border-radius:50%;
+
+    box-shadow:0 0 10px #ffd700;
+
+    animation:blinkSpark 2s infinite;
+}
+
+.spark1{
+    top:20%;
+    left:20%;
+}
+
+.spark2{
+    top:70%;
+    left:80%;
+}
+
+.spark3{
+    top:35%;
+    right:25%;
+}
+
+.spark4{
+    bottom:25%;
+    left:60%;
+}
+
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes shimmer{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+}
+
+@keyframes twinkle{
+
+    0%{
+        opacity:.1;
+        transform:scale(.5);
+    }
+
+    25%{
+        opacity:.4;
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+        text-shadow:
+        0 0 12px #ffd700,
+        0 0 25px #ffd700;
+    }
+
+    75%{
+        opacity:.4;
+    }
+
+    100%{
+        opacity:.1;
+        transform:scale(.5);
+    }
+}
+
+@keyframes floatParticles{
+
+    from{
+
+        background-position:0 0;
+    }
+
+    to{
+
+        background-position:
+        120px 120px;
+    }
+}
+@keyframes heartPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+        opacity:.2;
+    }
+
+    50%{
+
+        transform:scale(1.3);
+        opacity:.8;
+    }
+}
+@keyframes blinkSpark{
+
+    50%{
+        opacity:.8;
+    }
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .funny-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .gold-title{
+
+        font-size:4rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .funny-section{
+
+        padding:80px 20px;
+    }
+
+    .funny-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .gold-title{
+
+        font-size:3rem;
+    }
+
+    .script-title{
+
+        font-size:2.5rem;
+    }
+
+    .funny-card img{
+
+        height:380px;
+    }
+}
+.gold-particle{
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#ffd700;
+
+    box-shadow:
+    0 0 10px #ffd700;
+
+    animation:
+    floatGold linear infinite;
+}
+.countdown-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(7,17,31,.98);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+}
+
+.countdown-overlay.show{
+
+    display:flex;
+}
+
+.countdown-box{
+
+    text-align:center;
+}
+
+.countdown-box h2{
+
+    color:#d4af37;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 20px rgba(212,175,55,.6);
+}
+
+#countdownNumber{
+
+    font-size:9rem;
+
+    font-weight:900;
+
+    color:#ffd700;
+
+    text-shadow:
+    0 0 30px rgba(255,215,0,.8);
+
+    animation:pulse 1s infinite;
+}
+
+#countdownText{
+
+    margin-top:20px;
+
+    color:white;
+
+    font-size:1.2rem;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(.9);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+
+    100%{
+        transform:scale(.9);
+    }
+}
+
+@keyframes floatGold{
+
+    0%{
+
+        transform:
+        translateY(0);
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:1;
+    }
+
+    80%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-120px);
+
+        opacity:0;
+    }
+}
+
+/* ===========================
+   SCRATCH CARD
+=========================== */
+
+.scratch-card{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:5;
+
+    cursor:pointer;
+
+    border-radius:20px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .funny-card{
+
+        min-height:350px;
+
+    }
+
+    .funny-card img{
+
+        height:400px;
+
+        object-fit:cover;
+
+    }
+    .scratch-card{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:5;
+
+    border-radius:20px;
+
+}
+
+}

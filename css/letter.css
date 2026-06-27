@@ -1,0 +1,436 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:#07111f;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.letter-header{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    margin-bottom:0px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.letter-header h1{
+
+    color:#D4AF37;
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.4),
+    0 0 20px rgba(212,175,55,.3);
+}
+
+.letter-header p{
+
+    margin-top:10px;
+
+    color:#fff;
+
+    opacity:.8;
+
+    font-size:1rem;
+}
+
+/* ==========================
+   LETTER SECTION
+========================== */
+
+.letter-section{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:0px;
+}
+
+.letter-scroll{
+
+    width:600px;
+
+    height:850px;
+    margin-top:-60px;
+
+    background:
+    url("/assets/images/cover/scroll.png")
+    center center no-repeat;
+
+    background-size:100% 100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+    animation:floatScroll 5s ease-in-out infinite;
+}
+
+/* ==========================
+   LETTER CONTENT
+========================== */
+
+.letter-content{
+
+    width:62%;
+
+    max-height:500px;
+
+    text-align:center;
+
+    color:#4a2d00;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    scrollbar-width:none;
+
+    margin-top:-20px;
+}
+.letter-content h2{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    color:#4a2d00;
+
+    text-shadow:none;
+}
+.letter-content p{
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    font-weight:600;
+
+    white-space:pre-line;
+
+    color:#5a3410;
+}
+
+.letter-content::-webkit-scrollbar{
+    display:none;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+/* ==========================
+   ANCIENT KEY
+========================== */
+
+.key-container{
+
+    margin-top:25px;
+
+    text-align:center;
+}
+
+.key-btn{
+
+    font-size:4rem;
+
+    display:inline-block;
+
+    cursor:pointer;
+
+    color:#d4af37;
+
+    transition:.5s ease;
+
+    animation:keyFloat 3s ease-in-out infinite;
+}
+
+.key-btn:hover{
+
+    transform:
+    scale(1.2)
+    rotate(15deg);
+
+    text-shadow:
+    0 0 15px #ffd700,
+    0 0 30px #ffd700,
+    0 0 50px rgba(255,215,0,.7);
+}
+
+.key-text{
+
+    margin-top:8px;
+
+    color:#d4af37;
+
+    font-size:.95rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:.9;
+}
+
+@keyframes keyFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+/* ==========================
+   FLOATING EFFECT
+========================== */
+
+@keyframes floatScroll{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* ==========================
+   STARS
+========================== */
+
+.star{
+
+    position:absolute;
+
+    color:#FFD700;
+
+    font-size:1.3rem;
+
+    animation:blink 2s infinite;
+}
+
+.s1{
+    top:10%;
+    left:12%;
+}
+
+.s2{
+    top:20%;
+    right:15%;
+}
+
+.s3{
+    top:50%;
+    left:8%;
+}
+
+.s4{
+    bottom:20%;
+    right:10%;
+}
+
+.s5{
+    bottom:10%;
+    left:18%;
+}
+
+@keyframes blink{
+
+    0%,100%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* ==========================
+   GOLD PARTICLES
+========================== */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,215,0,.15) 1px,
+    transparent 1px);
+
+    background-size:80px 80px;
+
+    opacity:.3;
+}
+.signature{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+    font-style:italic;
+
+    font-weight:700;
+
+    color:#6b3f12;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    .letter-header{
+        margin-top:15px;
+        padding:0 10px;
+    }
+
+    .letter-header h1{
+
+        font-size:2.2rem;
+        line-height:1.2;
+
+    }
+
+    .letter-header p{
+
+        font-size:.95rem;
+
+    }
+
+    .letter-section{
+
+        padding:0;
+
+    }
+
+     .letter-scroll{
+
+        width:95vw;
+        height:calc(100vh - 80px);
+
+        max-width:380px;
+        max-height:750px;
+
+        margin-top:-20px;
+
+        background-size:100% 100%;
+        background-position:center;
+
+    }
+
+    .letter-content{
+
+        width:60%;
+
+        max-height:55%;
+
+        padding:10px;
+
+        margin-top:-10px;
+
+    }
+
+    .letter-content h2{
+
+        font-size:1.3rem;
+
+        margin-bottom:12px;
+
+    }
+
+    .letter-content p{
+
+        font-size:.82rem;
+
+        line-height:1.75;
+
+    }
+
+    .signature{
+
+        font-size:1rem;
+
+    }
+
+    .key-btn{
+
+        font-size:3rem;
+
+    }
+
+    .key-text{
+
+        font-size:.8rem;
+
+        letter-spacing:1px;
+
+    }
+
+    .star{
+
+        font-size:1rem;
+
+    }
+
+}

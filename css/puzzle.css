@@ -1,0 +1,341 @@
+body{
+
+    margin:0;
+
+    background:#081120;
+
+    color:white;
+
+    font-family:Poppins,sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+}
+
+.puzzle-container{
+
+    text-align:center;
+}
+
+h1{
+
+    color:#f6c453;
+}
+
+.puzzle-grid{
+
+    width:450px;
+    height:600px;
+
+    margin:30px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+
+    gap:3px;
+}
+
+.piece{
+
+    border:1px solid #f6c453;
+    cursor:grab;
+
+    background-image:url("/assets/images/timeline/timeline\ 7.jpeg");
+
+    background-size:450px 600px;
+
+    transition:.3s;
+}
+
+.piece:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 15px rgba(246,196,83,.5);
+}
+
+/* Row 1 */
+
+.piece:nth-child(1){
+    background-position:0 0;
+}
+
+.piece:nth-child(2){
+    background-position:-150px 0;
+}
+
+.piece:nth-child(3){
+    background-position:-300px 0;
+}
+
+/* Row 2 */
+
+.piece:nth-child(4){
+    background-position:0 -200px;
+}
+
+.piece:nth-child(5){
+    background-position:-150px -200px;
+}
+
+.piece:nth-child(6){
+    background-position:-300px -200px;
+}
+
+/* Row 3 */
+
+.piece:nth-child(7){
+    background-position:0 -400px;
+}
+
+.piece:nth-child(8){
+    background-position:-150px -400px;
+}
+
+.piece:nth-child(9){
+    background-position:-300px -400px;
+}
+.dragging{
+    opacity:0.6;
+    transform:scale(0.95);
+}
+.unlock-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:12px 25px;
+
+    background:#f6c453;
+
+    color:black;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.unlock-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 15px rgba(246,196,83,.6);
+}
+#successMessage{
+    display:none;
+}
+
+#successMessage.show{
+    display:block;
+    animation:pop .6s ease;
+}
+@keyframes pop{
+
+    0%{
+        transform:scale(.7);
+        opacity:0;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+.loading-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+.loading-overlay.show{
+    display:flex;
+}
+.loading-box{
+
+    width:450px;
+
+    background:#111827;
+
+    border:2px solid #f6c453;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 25px rgba(246,196,83,.15);
+}
+
+.loading-box h2{
+
+    color:#f6c453;
+    margin-bottom:25px;
+}
+
+.loading-bar{
+
+    width:350px;
+    height:12px;
+
+    background:#1f2937;
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+#loadingProgress{
+
+    width:0%;
+    height:100%;
+
+    background:#f6c453;
+
+    transition:.5s;
+}
+
+#loadingMessage{
+
+    margin-top:20px;
+    color:white;
+}
+#loadingTitle{
+
+    animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 5px rgba(246,196,83,.3);
+    }
+
+    to{
+        text-shadow:
+        0 0 15px rgba(246,196,83,.8),
+        0 0 25px rgba(246,196,83,.4);
+    }
+
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media (max-width: 768px){
+
+    body{
+        padding:15px;
+        align-items:flex-start;
+    }
+
+    .puzzle-container{
+        width:100%;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
+
+    .puzzle-grid{
+
+         width:300px;
+    height:420px;
+
+        
+    }
+
+    .piece{
+
+    background-repeat:no-repeat;
+
+    background-size:300px 420px;
+
+}
+
+    .unlock-btn{
+
+        width:90%;
+        max-width:250px;
+
+        font-size:16px;
+    }
+
+    .loading-box{
+
+        width:90%;
+        padding:25px;
+    }
+
+    .loading-bar{
+
+        width:100%;
+    }
+    /* MOBILE IMAGE POSITIONS */
+
+@media (max-width:768px){
+
+    .piece:nth-child(1){
+        background-position:0 0;
+    }
+
+    .piece:nth-child(2){
+        background-position:-100px 0;
+    }
+
+    .piece:nth-child(3){
+        background-position:-200px 0;
+    }
+
+    .piece:nth-child(4){
+        background-position:0 -140px;
+    }
+
+    .piece:nth-child(5){
+        background-position:-100px -140px;
+    }
+
+    .piece:nth-child(6){
+        background-position:-200px -140px;
+    }
+
+    .piece:nth-child(7){
+        background-position:0 -280px;
+    }
+
+    .piece:nth-child(8){
+        background-position:-100px -280px;
+    }
+
+    .piece:nth-child(9){
+        background-position:-200px -280px;
+    }
+
+}
+
+}

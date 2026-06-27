@@ -1,0 +1,357 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #10203a 0%,
+        #07111f 60%,
+        #040b15 100%
+    );
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    position:relative;
+}
+
+/* ==========================
+   BACKGROUND GLOW
+========================== */
+
+.bg-glow{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(212,175,55,.08),
+        transparent 60%
+    );
+
+    pointer-events:none;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.game-header{
+
+    text-align:center;
+
+    padding-top:30px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.game-header h1{
+
+    color:#D4AF37;
+
+    font-size:3rem;
+
+    text-shadow:
+    0 0 15px rgba(212,175,55,.4),
+    0 0 30px rgba(212,175,55,.2);
+}
+
+.game-header p{
+
+    margin-top:10px;
+
+    color:#ffffffcc;
+
+    font-size:1rem;
+}
+
+#counter{
+
+    margin-top:15px;
+
+    color:#FFD700;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+}
+
+/* ==========================
+   BALLOON AREA
+========================== */
+
+#balloonContainer{
+
+    position:relative;
+
+    width:100vw;
+
+    height:80vh;
+}
+
+/* ==========================
+   REALISTIC BALLOON
+========================== */
+
+.balloon{
+
+    position:absolute;
+
+    width:80px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.2s;
+
+    animation:
+    float 5s ease-in-out infinite;
+}
+
+.balloon:hover{
+
+    transform:scale(1.08);
+}
+
+/* ==========================
+   FLOATING EFFECT
+========================== */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* ==========================
+   HIT EFFECT
+========================== */
+
+.hit{
+
+    animation:
+    shake .25s;
+}
+
+@keyframes shake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-5px);
+    }
+
+    50%{
+        transform:translateX(5px);
+    }
+
+    75%{
+        transform:translateX(-5px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+
+/* ==========================
+   POP EFFECT
+========================== */
+
+.pop{
+
+    animation:
+    burst .5s forwards;
+}
+
+@keyframes burst{
+
+    0%{
+
+        transform:
+        scale(1);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        scale(1.8);
+
+        opacity:0;
+    }
+}
+
+/* ==========================
+   CELEBRATION SCREEN
+========================== */
+
+.celebration{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.9);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:1000;
+}
+
+.popper{
+
+    font-size:8rem;
+
+    animation:
+    popperBounce 1s infinite;
+}
+
+@keyframes popperBounce{
+
+    50%{
+
+        transform:
+        scale(1.2)
+        rotate(10deg);
+    }
+}
+
+.celebration h2{
+
+    color:#FFD700;
+
+    margin-top:20px;
+
+    font-size:2rem;
+}
+
+.celebration p{
+
+    margin-top:10px;
+
+    color:white;
+}
+.particles{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+}
+
+/* ==========================
+   LOADING SCREEN
+========================== */
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#07111f;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:2000;
+}
+
+.loading-overlay h2{
+
+    color:#D4AF37;
+
+    margin-bottom:20px;
+}
+
+.loading-bar{
+
+    width:350px;
+
+    height:12px;
+
+    background:#1c2433;
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+#progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #D4AF37,
+        #FFD700
+    );
+
+    transition:.3s;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .game-header h1{
+
+        font-size:2rem;
+    }
+
+    .balloon{
+
+        width:65px;
+    }
+
+    .loading-bar{
+
+        width:280px;
+    }
+}

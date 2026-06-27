@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Thanish</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/welcome.css">
+</head>
+
+<body class="page-transition">
+    <!-- Hanging Memories -->
+
+<div class="memory-rope">
+
+    <div class="photo-card photo1">
+        <div class="clip"></div>
+        <img src="./assets/images/cover/c7.jpeg" alt="">
+    </div>
+
+    <div class="photo-card photo2">
+        <div class="clip"></div>
+        <img src="./assets/images/cover/c9.jpeg" alt="">
+    </div>
+
+    <div class="photo-card photo3">
+        <div class="clip"></div>
+        <img src="./assets/images/cover/c3.jpeg" alt="">
+    </div>
+
+    <div class="photo-card photo4">
+        <div class="clip"></div>
+        <img src="./assets/images/cover/c6.jpeg" alt="">
+    </div>
+
+</div>
+
+    <!-- Stars -->
+    <!-- <div class="shooting-star"></div> -->
+
+    <!-- Fairy Lights -->
+    <div class="fairy-lights">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <section class="welcome-section">
+        <div class="container">
+
+            <div class="welcome-content">
+
+                <p class="intro-text">A Special Memory Book</p>
+
+                <h1 class="hero-title">THANISH</h1>
+
+                <h3 id="typewriter" class="typewriter-text"></h3>
+
+                <div class="btn-group-custom">
+
+                    <button class="music-btn" id="musicBtn">
+                        <i class="fa-solid fa-music"></i>
+                        Play Music
+                    </button>
+
+                    <button id="enterBtn" class="enter-btn">
+    Enter Memory Book
+</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <audio id="bgMusic" loop>
+        <source src="./assets/music/Koodappirannor Slowed Reverb.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="./js/utils/typewriter.js"></script>
+    <script src="./js/music.js"></script>
+    <script src="./js/pages/welcome.js"></script>
+
+<!-- Question Modal -->
+
+<div class="question-modal" id="questionModal">
+
+
+<div class="question-box">
+
+    <div id="loadingScreen">
+
+        <h3 id="loadingText">
+            Initializing Memory Archive...
+        </h3>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+        <p id="accessGranted" style="display:none;">
+    ACCESS GRANTED ❤️
+</p>
+
+    </div>
+
+    <div id="questionContent" style="display:none;">
+
+        <p>Who is your favorite person in world?😏</p>
+
+        <input
+            type="text"
+            id="answerInput"
+            placeholder="Type your answer">
+
+        <button id="submitAnswer">
+            Submit
+        </button>
+
+        <p id="resultMessage"></p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<audio id="cameraSound">
+    <source src="./assets/music/soundreality-ding-411634.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+
+</html>

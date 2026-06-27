@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Puzzle Challenge</title>
+
+    <link rel="stylesheet" href="./css/puzzle.css">
+
+</head>
+
+<body>
+
+    <div class="puzzle-container">
+
+        <h1>Complete The Puzzle🧩</h1>
+
+        <p>Put Us Back Together ❤️</p>
+
+        <div class="puzzle-grid">
+
+            <div class="piece" draggable="true" data-order="1"></div>
+            <div class="piece" draggable="true" data-order="2"></div>
+            <div class="piece" draggable="true" data-order="3"></div>
+
+            <div class="piece" draggable="true" data-order="4"></div>
+            <div class="piece" draggable="true" data-order="5"></div>
+            <div class="piece" draggable="true" data-order="6"></div>
+
+            <div class="piece" draggable="true" data-order="7"></div>
+            <div class="piece" draggable="true" data-order="8"></div>
+            <div class="piece" draggable="true" data-order="9"></div>
+
+        </div>
+
+        <div id="successMessage">
+
+            <h2>💛 Memory Restored Successfully</h2>
+
+            <button id="unlockBtn" class="unlock-btn">
+                Click Here To Unlock
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Loading Overlay -->
+
+    <div id="loadingOverlay" class="loading-overlay">
+
+        <div class="loading-box">
+
+            <h2 id="loadingTitle">
+                Unlocking...
+            </h2>
+
+            <div class="loading-bar">
+
+                <div id="loadingProgress"></div>
+
+            </div>
+
+            <p id="loadingMessage">
+                Collecting embarrassing evidence...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="./js/pages/puzzle.js"></script>
+
+</body>
+
+</html>
