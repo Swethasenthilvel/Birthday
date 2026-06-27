@@ -4,19 +4,19 @@
 =========================== */
 
 const reveals =
-document.querySelectorAll(".reveal");
+    document.querySelectorAll(".reveal");
 
-function revealOnScroll(){
+function revealOnScroll() {
 
     reveals.forEach(card => {
 
         const cardTop =
-        card.getBoundingClientRect().top;
+            card.getBoundingClientRect().top;
 
         const trigger =
-        window.innerHeight - 100;
+            window.innerHeight - 100;
 
-        if(cardTop < trigger){
+        if (cardTop < trigger) {
 
             card.classList.add("active");
 
@@ -27,13 +27,13 @@ function revealOnScroll(){
 }
 
 window.addEventListener(
-"scroll",
-revealOnScroll
+    "scroll",
+    revealOnScroll
 );
 
 window.addEventListener(
-"load",
-revealOnScroll
+    "load",
+    revealOnScroll
 );
 
 
@@ -42,31 +42,31 @@ revealOnScroll
 =========================== */
 
 const particlesContainer =
-document.querySelector(".particles");
+    document.querySelector(".particles");
 
-for(let i = 0; i < 25; i++){
+for (let i = 0; i < 25; i++) {
 
     const particle =
-    document.createElement("span");
+        document.createElement("span");
 
     particle.classList.add(
-    "gold-particle"
+        "gold-particle"
     );
 
     particle.style.left =
-    Math.random() * 100 + "%";
+        Math.random() * 100 + "%";
 
     particle.style.top =
-    Math.random() * 100 + "%";
+        Math.random() * 100 + "%";
 
     particle.style.animationDelay =
-    Math.random() * 8 + "s";
+        Math.random() * 8 + "s";
 
     particle.style.animationDuration =
-    (5 + Math.random() * 8) + "s";
+        (5 + Math.random() * 8) + "s";
 
     particlesContainer.appendChild(
-    particle
+        particle
     );
 }
 
@@ -76,28 +76,28 @@ for(let i = 0; i < 25; i++){
 =========================== */
 
 window.addEventListener(
-"load",
-() => {
+    "load",
+    () => {
 
-    const cards =
-    document.querySelectorAll(
-    ".funny-card"
-    );
-
-    cards.forEach(
-    (card,index) => {
-
-        setTimeout(() => {
-
-            card.classList.add(
-            "active"
+        const cards =
+            document.querySelectorAll(
+                ".funny-card"
             );
 
-        }, index * 150);
+        cards.forEach(
+            (card, index) => {
+
+                setTimeout(() => {
+
+                    card.classList.add(
+                        "active"
+                    );
+
+                }, index * 150);
+
+            });
 
     });
-
-});
 
 
 /* ===========================
@@ -105,20 +105,20 @@ window.addEventListener(
 =========================== */
 
 const nextBtn =
-document.querySelector(".next-btn");
+    document.querySelector(".next-btn");
 
 nextBtn?.addEventListener("click", (e) => {
 
     e.preventDefault();
 
     const overlay =
-    document.getElementById("countdownOverlay");
+        document.getElementById("countdownOverlay");
 
     const number =
-    document.getElementById("countdownNumber");
+        document.getElementById("countdownNumber");
 
     const text =
-    document.getElementById("countdownText");
+        document.getElementById("countdownText");
 
     overlay.classList.add("show");
 
@@ -128,25 +128,25 @@ nextBtn?.addEventListener("click", (e) => {
 
         count--;
 
-        if(count > 0){
+        if (count > 0) {
 
             number.innerText = count;
 
         }
 
-        else{
+        else {
 
             clearInterval(timer);
 
             number.innerText = "🎁";
 
             text.innerText =
-            "Ready? 💛";
+                "Ready? 💛";
 
             setTimeout(() => {
 
                 window.location.href =
-                "letter.html";
+                    "letter.html";
 
             }, 2000);
 
@@ -162,102 +162,107 @@ nextBtn?.addEventListener("click", (e) => {
 =========================== */
 
 document.addEventListener(
-"mousemove",
-(e) => {
+    "mousemove",
+    (e) => {
 
-    const title =
-    document.querySelector(
-    ".gold-title"
-    );
+        const title =
+            document.querySelector(
+                ".gold-title"
+            );
 
-    if(!title) return;
+        if (!title) return;
 
-    const x =
-    (window.innerWidth / 2 - e.clientX)
-    / 40;
+        const x =
+            (window.innerWidth / 2 - e.clientX)
+            / 40;
 
-    const y =
-    (window.innerHeight / 2 - e.clientY)
-    / 40;
+        const y =
+            (window.innerHeight / 2 - e.clientY)
+            / 40;
 
-    title.style.transform =
-    `translate(${x}px, ${y}px)`;
+        title.style.transform =
+            `translate(${x}px, ${y}px)`;
 
-});
+    });
 
 /* ===========================
    GOLD SCRATCH CARDS
 =========================== */
 
 const scratchCards =
-document.querySelectorAll(".scratch-card");
+    document.querySelectorAll(".scratch-card");
 
 const sounds = [
 
-"/assets/music/funny1.mp3",
-"/assets/music/funny2.mp3",
-"/assets/music/funny3.mp3",
-"/assets/music/funny4.mp3",
-"/assets/music/funny5.mp3",
-"/assets/music/funny6.mp3",
-"/assets/music/funny7.mp3",
-"/assets/music/funny8.mp3"
+    "/assets/music/funny1.mp3",
+    "/assets/music/funny2.mp3",
+    "/assets/music/funny3.mp3",
+    "/assets/music/funny4.mp3",
+    "/assets/music/funny5.mp3",
+    "/assets/music/funny6.mp3",
+    "/assets/music/funny7.mp3",
+    "/assets/music/funny8.mp3"
 
 ];
 
-scratchCards.forEach((canvas,index) => {
+scratchCards.forEach((canvas, index) => {
 
     const ctx =
-    canvas.getContext("2d");
+        canvas.getContext(
+            "2d",
+            {
+                willReadFrequently: true
+            }
+        );
 
     const audio =
-    new Audio(sounds[index]);
+        new Audio(sounds[index]);
 
     audio.preload = "auto";
 
     let audioUnlocked = false;
 
-    function unlockAudio(){
+    function unlockAudio() {
 
-        if(audioUnlocked) return;
+        if (audioUnlocked) return;
 
         audio.play()
-        .then(() => {
+            .then(() => {
 
-            audio.pause();
+                audio.pause();
 
-            audio.currentTime = 0;
+                audio.currentTime = 0;
 
-            audioUnlocked = true;
+                audioUnlocked = true;
 
-        })
-        .catch(() => {});
+            })
+            .catch(() => { });
 
     }
 
-    function setupCanvas(){
+    function setupCanvas() {
 
         canvas.width =
-        canvas.offsetWidth;
+            canvas.offsetWidth;
 
         canvas.height =
-        canvas.offsetHeight;
+            canvas.offsetHeight;
 
         const gradient =
-        ctx.createLinearGradient(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+            ctx.createLinearGradient(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
 
-        gradient.addColorStop(0,"#FFD700");
-        gradient.addColorStop(.3,"#FFF4B0");
-        gradient.addColorStop(.6,"#D4AF37");
-        gradient.addColorStop(1,"#FFD700");
+        gradient.addColorStop(0, "#FFD700");
+        gradient.addColorStop(.3, "#FFF4B0");
+        gradient.addColorStop(.6, "#D4AF37");
+        gradient.addColorStop(1, "#FFD700");
 
         ctx.fillStyle =
-        gradient;
+            gradient;
 
         ctx.fillRect(
             0,
@@ -266,21 +271,33 @@ scratchCards.forEach((canvas,index) => {
             canvas.height
         );
 
-        for(let i=0;i<500;i++){
+        const glitterCount =
+
+            window.innerWidth < 768
+
+                ?
+
+                220
+
+                :
+
+                500;
+
+        for (let i = 0; i < glitterCount; i++) {
 
             ctx.beginPath();
 
             ctx.fillStyle =
 
-            Math.random() > .5
+                Math.random() > .5
 
-            ?
+                    ?
 
-            "rgba(255,255,255,.9)"
+                    "rgba(255,255,255,.9)"
 
-            :
+                    :
 
-            "rgba(255,215,0,.9)";
+                    "rgba(255,215,0,.9)";
 
             ctx.arc(
 
@@ -301,13 +318,13 @@ scratchCards.forEach((canvas,index) => {
         }
 
         ctx.fillStyle =
-        "#07111f";
+            "#07111f";
 
         ctx.font =
-        "bold 26px Poppins";
+            "bold 26px Poppins";
 
         ctx.textAlign =
-        "center";
+            "center";
 
         ctx.fillText(
 
@@ -329,27 +346,33 @@ scratchCards.forEach((canvas,index) => {
 
     let revealed = false;
 
-    function checkScratchPercent(){
+    let scratchCount = 0;
+
+    let lastX = 0;
+
+    let lastY = 0;
+
+    function checkScratchPercent() {
 
         const pixels =
-        ctx.getImageData(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        ).data;
+            ctx.getImageData(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            ).data;
 
         let transparent = 0;
 
-        for(
+        for (
             let i = 3;
             i < pixels.length;
             i += 4
-        ){
+        ) {
 
-            if(
+            if (
                 pixels[i] === 0
-            ){
+            ) {
 
                 transparent++;
 
@@ -359,37 +382,37 @@ scratchCards.forEach((canvas,index) => {
 
         const percent =
 
-        (transparent /
+            (transparent /
 
-        (pixels.length / 4))
+                (pixels.length / 4))
 
-        * 100;
+            * 100;
 
-        if(
+        if (
             percent >= 65 &&
             !revealed
-        ){
+        ) {
 
             revealed = true;
 
-            if(!soundPlayed){
+            if (!soundPlayed) {
 
                 audio.currentTime = 0;
 
                 audio.play()
-                .catch(err =>
-                    console.log(err)
-                );
+                    .catch(err =>
+                        console.log(err)
+                    );
 
                 soundPlayed = true;
 
             }
 
             canvas.style.transition =
-            ".6s ease";
+                ".6s ease";
 
             canvas.style.opacity =
-            "0";
+                "0";
 
             setTimeout(() => {
 
@@ -401,24 +424,59 @@ scratchCards.forEach((canvas,index) => {
 
     }
 
-    function scratch(x,y){
+    function scratch(x, y) {
 
         ctx.globalCompositeOperation =
-        "destination-out";
+            "destination-out";
+
+        ctx.lineCap =
+            "round";
+
+        ctx.lineJoin =
+            "round";
+
+        const radius =
+
+            window.innerWidth < 768
+
+                ?
+
+                42
+
+                :
+
+                30;
+
+        ctx.lineWidth =
+            radius * 2;
 
         ctx.beginPath();
 
-        ctx.arc(
-            x,
-            y,
-            28,
-            0,
-            Math.PI * 2
+        ctx.moveTo(
+            lastX,
+            lastY
         );
 
-        ctx.fill();
+        ctx.lineTo(
+            x,
+            y
+        );
 
-        checkScratchPercent();
+        ctx.stroke();
+
+        lastX = x;
+
+        lastY = y;
+
+        scratchCount++;
+
+        if (
+            scratchCount % 12 === 0
+        ) {
+
+            checkScratchPercent();
+
+        }
 
     }
 
@@ -426,11 +484,22 @@ scratchCards.forEach((canvas,index) => {
 
     canvas.addEventListener(
         "mousedown",
-        () => {
+        e => {
 
             unlockAudio();
 
             scratching = true;
+
+            const rect =
+                canvas.getBoundingClientRect();
+
+            lastX =
+                e.clientX -
+                rect.left;
+
+            lastY =
+                e.clientY -
+                rect.top;
 
         }
     );
@@ -457,11 +526,11 @@ scratchCards.forEach((canvas,index) => {
         "mousemove",
         e => {
 
-            if(!scratching)
-            return;
+            if (!scratching)
+                return;
 
             const rect =
-            canvas.getBoundingClientRect();
+                canvas.getBoundingClientRect();
 
             scratch(
 
@@ -479,13 +548,16 @@ scratchCards.forEach((canvas,index) => {
     /* MOBILE */
 
     canvas.addEventListener(
-        "touchstart",
+        "touchmove",
         e => {
 
-            unlockAudio();
+            if (!scratching)
+                return;
+
+            e.preventDefault();
 
             const rect =
-            canvas.getBoundingClientRect();
+                canvas.getBoundingClientRect();
 
             scratch(
 
@@ -498,7 +570,25 @@ scratchCards.forEach((canvas,index) => {
             );
 
         },
-        { passive:false }
+        { passive: false }
+    );
+
+    canvas.addEventListener(
+        "touchend",
+        () => {
+
+            scratching = false;
+
+        }
+    );
+
+    canvas.addEventListener(
+        "touchcancel",
+        () => {
+
+            scratching = false;
+
+        }
     );
 
     canvas.addEventListener(
@@ -508,7 +598,7 @@ scratchCards.forEach((canvas,index) => {
             e.preventDefault();
 
             const rect =
-            canvas.getBoundingClientRect();
+                canvas.getBoundingClientRect();
 
             scratch(
 
@@ -521,7 +611,7 @@ scratchCards.forEach((canvas,index) => {
             );
 
         },
-        { passive:false }
+        { passive: false }
     );
 
 });
