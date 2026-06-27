@@ -68,28 +68,34 @@ for (let i = 0; i < total; i++) {
 
             if (hp <= 0) {
 
-                balloon.classList.add("pop");
+    if (balloon.dataset.popped === "true") return;
 
-                createBurst(balloon);
+    balloon.dataset.popped = "true";
 
-                setTimeout(() => {
+    balloon.style.pointerEvents = "none";
 
-                    balloon.remove();
+    balloon.classList.add("pop");
 
-                }, 500);
+    createBurst(balloon);
 
-                popped++;
+    setTimeout(() => {
 
-                counter.innerText =
-                    `${popped} / ${total}`;
+        balloon.remove();
 
-                if (popped === total) {
+        popped++;
 
-                    finishGame();
+        counter.innerText =
+            `${popped} / ${total}`;
 
-                }
+        if (popped === total) {
 
-            }
+            finishGame();
+
+        }
+
+    }, 500);
+
+}
 
         });
 
