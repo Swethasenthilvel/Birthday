@@ -56,7 +56,7 @@ window.addEventListener(
 
         setTimeout(
             typeWriter,
-            1000
+            200
         );
 
     });
