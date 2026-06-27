@@ -1436,5 +1436,12 @@ body{
         height:380px;
 
     }
-
+    #modalVideo {
+        width: 85%;
+        max-width: 320px;
+        max-height: 75vh;
+        height: auto;
+        border-radius: 16px;
+        object-fit: contain;
+    }
 }
